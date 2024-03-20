@@ -1,6 +1,7 @@
 import 'package:aqar/translation/translation.dart';
 import 'package:aqar/widgets/bottom_navigation.dart';
 import 'package:aqar/widgets/home/home_header.dart';
+import 'package:aqar/widgets/home/property_screen.dart';
 import 'package:aqar/widgets/horizontal_spacer.dart';
 import 'package:aqar/widgets/vertical_spacer.dart';
 import 'package:flutter/material.dart';
@@ -134,8 +135,15 @@ class HomeScreen extends StatelessWidget {
                     child: ListView.separated(
                       padding: EdgeInsets.only(bottom: 20.h),
                       scrollDirection: Axis.vertical,
-                      itemBuilder: (context, index) => PropertyCard(
-                        property: properties[index],
+                      itemBuilder: (context, index) => InkWell(
+                        onTap: () {
+                          Get.to(() => PropertyScreen(
+                                property: properties[index],
+                              ));
+                        },
+                        child: PropertyCard(
+                          property: properties[index],
+                        ),
                       ),
                       separatorBuilder: (context, index) => Divider(
                         color: Colors.blueGrey.shade300,

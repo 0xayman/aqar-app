@@ -6,7 +6,6 @@ import 'package:aqar/translation/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,18 +33,10 @@ class _MyAppState extends State<MyApp> {
             theme: theme,
             initialBinding: StoreBinding(),
             home: FlutterSplashScreen.fadeIn(
-              gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.lightBlue,
-                  Colors.blue,
-                ],
-              ),
-              childWidget: const Icon(
-                Iconsax.buildings_2,
-                size: 100,
-                color: Colors.white,
+              backgroundColor: Colors.white,
+              childWidget: Image.asset(
+                'assets/images/logo.png',
+                width: 250.w,
               ),
               duration: const Duration(milliseconds: 3000),
               animationDuration: const Duration(milliseconds: 2000),

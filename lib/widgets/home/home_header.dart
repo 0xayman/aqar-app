@@ -15,11 +15,11 @@ class HomeHeader extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.blue.shade900,
-        image: DecorationImage(
-          image: const AssetImage('assets/images/town_skyline.png'),
+        image: const DecorationImage(
+          image: AssetImage('assets/images/town_skyline.png'),
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
-            Colors.blue.shade800,
+            Color(0xFF003580),
             BlendMode.screen,
           ),
         ),
@@ -35,13 +35,9 @@ class HomeHeader extends StatelessWidget {
             size: 30.sp,
           ),
           VerticalSpacer(height: 20.h),
-          Text(
-            "LOGO",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 25.sp,
-              fontWeight: FontWeight.bold,
-            ),
+          Image.asset(
+            'assets/images/min-logo.png',
+            width: 100.w,
           ),
           const Spacer(),
           TextFormField(
@@ -56,7 +52,7 @@ class HomeHeader extends StatelessWidget {
               ),
               suffixIcon: const Icon(
                 Iconsax.search_normal,
-                color: Colors.blue,
+                color: Color(0xFF003580),
               ),
               filled: true,
               fillColor: Colors.white,
